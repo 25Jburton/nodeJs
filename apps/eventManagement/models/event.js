@@ -2,14 +2,12 @@ const mongoose = require('mongoose');
 
 const EventSchema = new mongoose.Schema(
     {
-        // Define the schema for our form
-        title: {
-            type: String,
-            required: true
-        }
-    }
-)
+        name: String,
+        team_selection: String,
+        explanation: String,
+    },
+    { timestamps: true }    
+);
 
-const Event = mongoose.model('event', EventSchema);
-
+const Event  = mongoose.model('teamForm', EventSchema);
 module.exports = Event;
