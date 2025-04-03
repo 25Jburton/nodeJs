@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <div class="page-title">
-        <%= title %>
-    </div>
-    <div class="page-body">
-        <% if (events.length > 0) { %>
-            <% events.forEach(event => { %>
-              <div>
-                <h3><%= event.name %></h3>
-                <p><%= event.team_selection %></p>
-                <p><%= event.explanation %></p>
-                <a href="/event/<%= event.id %>">
-                  Read More
-                </a>
-              </div>
-            <% }) %>
-          <% } else { %>
-            <p>No forms available at the moment.</p>
-          <% } %>
-    </div>
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="page-body">
+            <% if (events.length > 0) { %>
+                <% events.forEach(event => { %>
+                  <div>
+                    <h3><%= event.name %></h3>
+                    <p><%= event.team_selection %></p>
+                    <p><%= event.explanation %></p>
+                    <a href="/team-form-data?form_id=<%= event.id %>">
+                      Read More
+                    </a>
+                  </div>
+                <% }) %>
+              <% } else { %>
+                <p>No forms available at the moment.</p>
+              <% } %>
+        </div>
+        <%- include('./partials/footer.ejs') %>
+    </body>
 </html>

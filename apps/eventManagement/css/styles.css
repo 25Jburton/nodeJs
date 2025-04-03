@@ -1,0 +1,73 @@
+
+body {
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "menu content"
+      "footer footer";
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+    padding: 5px;
+    header{
+        grid-area: header;
+        text-align: center;
+    }
+    a{
+        text-decoration: unset;
+    }
+    .navBar{
+        padding: 24px;
+        z-index: 1;
+        background-color: rgb(72, 72, 72);
+        grid-area: menu;
+        ul, a{
+            list-style: none;
+            color: firebrick !important;
+            li{
+                margin-top: 1rem;
+            }
+        }
+    }
+    .page-title{
+     text-align: center;
+     font-size: xx-large;   
+     grid-area: content;
+     margin-bottom: 24px;
+    }
+    .page-body{
+        grid-area: content;
+        padding: 24px;
+        font-size: large;
+    }
+    footer{
+        text-align: center;
+        grid-area: footer;      
+    }
+}
+
+form {
+    margin: 5rem;
+    .form-heading{
+        font-size: x-large;
+    }
+    font-size: large;
+    .form-inputs{
+        width: 100%;
+        margin: 3rem;
+    }
+    .form-label{
+        text-decoration: solid;
+        color: firebrick;
+        padding-right: 1rem;
+    }
+    .form-input{
+
+    }
+    .form-footer{
+        text-align: center;
+        grid-area: footer;     
+    }
+}
+/*# sourceMappingURL=styles.css.map */

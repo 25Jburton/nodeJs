@@ -12,32 +12,28 @@
                     <label for="name" class="form-label">
                         Name
                     </label>
-                    <input name="name" class="form-input">
+                    <input name="name" class="form-input" value="<%= event.name %>">
                 </div>
                 <div class="form-inputs">
                     <label for="team_selection" class="form-label">
                         Favorite Team
                     </label>
                     <select type="select" name="team_selection" class="form-select">
-                        <option value="red_bull">Red Bull</option>
-                        <option value="racing_bulls">Racing Bulls</option>
-                        <option value="mclaren">Mclaren</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="aston_martin">Aston Martin</option>
-                        <option value="haas">HAAS</option>
-                        <option value="alpine">Alpine</option>
-                        <option value="williams">Williams</option>
-                        <option value="sauber">Kick Sauber</option>
+                        <option value="<%= event.team_selection %>"><%= event.team_selection %></option>
                     </select>
                 </div>
                 <div class="form-inputs">
                     <label for="explanation" class="form-label">
                         Explanation
                     </label>
-                    <textarea name="explanation" class="form-textArea"></textarea>
+                    <textarea name="explanation" class="form-textArea">
+                        <%= event.explanation %>
+                    </textarea>
                 </div> 
                 <div class="form-footer">
-                    <button type="submit">Submit</button>
+                    <label for="name" class="form-label">
+                        Form Completed on <%= event.createdAt %>
+                    </label>
                 </div>
             </form>
         </div>

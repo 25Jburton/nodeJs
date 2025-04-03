@@ -9,7 +9,7 @@ const dbURL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.6rforvx.mongodb.
 const event = require('./models/event');
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static('css'));
 mongoose
   .connect(dbURL)
   .then((res) => {
@@ -30,7 +30,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get(['/', '/home'], (req, res) => {
     event.find().then((result) => {
-        res.render(__dirname +'/views/dashboard.ejs', { title: 'Welcome to the Dashboard!', events: result })
+        res.render(__dirname +'/views/dashboard.ejs', 
+            { 
+                title: 'Welcome to the Dashboard!',
+                events: result,
+                styleSheet: '/styles.css',
+            }
+        );
         console.log(`Data returned: ${result}`);
     })
     .catch((err) => {
@@ -39,7 +45,43 @@ app.get(['/', '/home'], (req, res) => {
 });
 
 app.get('/team-form', (req, res) => {
-    res.render(__dirname +'/views/sampleForm.ejs');
+    res.render(__dirname +'/views/sampleForm.ejs',
+        {
+            title: 'Fill out Form Below!',
+            styleSheet: '/styles.css',
+        }
+    );
+});
+
+app.get('/team-form-data', async  (req, res) => {
+    const id = req.query.form_id;
+    event.findById(id).then((result) => {
+        res.render(__dirname +'/views/completedForm.ejs', 
+            { 
+                title: 'Review Completed Form Below!',
+                event: result,
+                styleSheet: '/styles.css',
+            }
+        );
+        console.log(`Data returned: ${result}`);
+    })
+    .catch((err) => {
+        console.error(err); 
+    });
+    
+    // event.find().then((result) => {
+    //     res.render(__dirname +'/views/dashboard.ejs', 
+    //         { 
+    //             title: 'Welcome to the Dashboard!',
+    //             events: result,
+    //             styleSheet: '/styles.css',
+    //         }
+    //     );
+    //     console.log(`Data returned: ${result}`);
+    // })
+    // .catch((err) => {
+    //     console.error(err); 
+    // })
 });
 
 // posting form data to DB

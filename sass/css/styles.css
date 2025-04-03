@@ -1,11 +1,3 @@
 /* Add SCSS styles below */
-.mainDiv {
-    background-color: aqua;
-    .secondDiv, .thirdDiv {
-        color: brown;
-        .thirdDivChild{
-            color: blue;
-        }
-    }
-}
+
 /*# sourceMappingURL=styles.css.map */
