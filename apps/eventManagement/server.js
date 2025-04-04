@@ -7,9 +7,11 @@ const mongoose = require('mongoose');
 const { DB_USER, DB_PASSWORD, DB_NAME } = require('./credentials');
 const dbURL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.6rforvx.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 const event = require('./models/event');
+
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('css'));
+
 mongoose
   .connect(dbURL)
   .then((res) => {
@@ -68,20 +70,6 @@ app.get('/team-form-data', async  (req, res) => {
     .catch((err) => {
         console.error(err); 
     });
-    
-    // event.find().then((result) => {
-    //     res.render(__dirname +'/views/dashboard.ejs', 
-    //         { 
-    //             title: 'Welcome to the Dashboard!',
-    //             events: result,
-    //             styleSheet: '/styles.css',
-    //         }
-    //     );
-    //     console.log(`Data returned: ${result}`);
-    // })
-    // .catch((err) => {
-    //     console.error(err); 
-    // })
 });
 
 // posting form data to DB
