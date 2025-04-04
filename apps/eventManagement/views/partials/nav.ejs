@@ -1,15 +1,8 @@
-<nav class="navBar">
+<nav class="navBar text-center mt-2">
     Navigation Links
-    <ul>
-        <li>
-            <a href="./home">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="./team-form">
-                Favorite F1 Team
-            </a>
-        </li>
-    </ul>
+    <hr>
+    <div class="nav flex-column nav-pills m-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link <% if (tab === 'home') { %> active <% } %>" data-toggle="pill" href="./home"      role="tab" aria-controls="v-pills-home"      <% if (tab === 'home') { %> aria-selected="true" <% } else { %> aria-selected="false" <% } %> >Home</a>
+        <a class="nav-link <% if (tab === 'form') { %> active <% } %>" data-toggle="pill" href="./team-form" role="tab" aria-controls="v-pills-team-form" <% if (tab === 'form') { %> aria-selected="true" <% } else { %> aria-selected="false" <% } %> >F1 Team</a>
+    </div>
 </nav>

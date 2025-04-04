@@ -4,38 +4,7 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="page-body">
-            <form action="/sample-form-submit" method="POST">
-                <div class="form-heading">
-                    What is your favorite Formula1 Team?
-                </div>
-                <div class="form-inputs">
-                    <label for="name" class="form-label">
-                        Name
-                    </label>
-                    <input name="name" class="form-input" value="<%= event.name %>">
-                </div>
-                <div class="form-inputs">
-                    <label for="team_selection" class="form-label">
-                        Favorite Team
-                    </label>
-                    <select type="select" name="team_selection" class="form-select">
-                        <option value="<%= event.team_selection %>"><%= event.team_selection %></option>
-                    </select>
-                </div>
-                <div class="form-inputs">
-                    <label for="explanation" class="form-label">
-                        Explanation
-                    </label>
-                    <textarea name="explanation" class="form-textArea">
-                        <%= event.explanation %>
-                    </textarea>
-                </div> 
-                <div class="form-footer">
-                    <label for="name" class="form-label">
-                        Form Completed on <%= event.createdAt %>
-                    </label>
-                </div>
-            </form>
+            <%- include('./partials/singleEventCard.ejs') %>
         </div>
         <%- include('./partials/footer.ejs') %>
     </body>

@@ -1,0 +1,77 @@
+<!-- <form action="/sample-form-submit" method="POST">
+    <div class="form-heading">
+        What is your favorite Formula1 Team?
+    </div>
+    <div class="form-inputs">
+        <label class="form-label">
+            Name
+        </label>
+        <input name="name" class="form-input">
+    </div>
+    <div class="form-inputs">
+        <label for="team_selection" class="form-label">
+            Favorite Team
+        </label>
+        <select type="select" name="team_selection" class="form-select">
+            <option value="Red Bull">Red Bull</option>
+            <option value="Racing Bulls">Racing Bulls</option>
+            <option value="Mclaren">Mclaren</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="HAAS">HAAS</option>
+            <option value="Alpine">Alpine</option>
+            <option value="Williams">Williams</option>
+            <option value="Sauber">Kick Sauber</option>
+        </select>
+    </div>
+    <div class="form-inputs">
+        <label for="explanation" class="form-label">
+            Explanation
+        </label>
+        <textarea name="explanation" class="form-textArea"></textarea>
+    </div> 
+    <div class="form-footer">
+        <button type="submit">Submit</button>
+    </div>
+</form> -->
+<div class="card">
+    <div class="card-header text-center">
+        Favorite Formula 1 Team Form
+    </div>
+    <form action="/sample-form-submit" method="POST">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name" >Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name...">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="team_selection" class="form-label">
+                    Favorite Team
+                </label>
+                    <select type="select" class="form-control" id="team_selection" name="team_selection">
+                        <option disabled selected>Please select team</option>
+                        <option value="Red Bull">Red Bull</option>
+                        <option value="Racing Bulls">Racing Bulls</option>
+                        <option value="Mclaren">Mclaren</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="HAAS">HAAS</option>
+                        <option value="Alpine">Alpine</option>
+                        <option value="Williams">Williams</option>
+                        <option value="Sauber">Kick Sauber</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="explanation" class="form-label">
+                    Explanation
+                </label>
+                <textarea type="textarea" class="form-control" id="explanation" name="explanation" placeholder="Enter explanation..."></textarea>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </div>
+    </form>
+</div>

@@ -11,6 +11,7 @@ const event = require('./models/event');
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('css'));
+app.use(express.static('images'));
 
 mongoose
   .connect(dbURL)
@@ -37,6 +38,7 @@ app.get(['/', '/home'], (req, res) => {
                 title: 'Welcome to the Dashboard!',
                 events: result,
                 styleSheet: '/styles.css',
+                tab: 'home'
             }
         );
         console.log(`Data returned: ${result}`);
@@ -51,6 +53,7 @@ app.get('/team-form', (req, res) => {
         {
             title: 'Fill out Form Below!',
             styleSheet: '/styles.css',
+            tab: 'form'
         }
     );
 });
@@ -63,6 +66,7 @@ app.get('/team-form-data', async  (req, res) => {
                 title: 'Review Completed Form Below!',
                 event: result,
                 styleSheet: '/styles.css',
+                tab: 'form-data'
             }
         );
         console.log(`Data returned: ${result}`);

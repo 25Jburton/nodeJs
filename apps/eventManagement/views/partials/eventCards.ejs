@@ -1,0 +1,25 @@
+<% if (events.length > 0) { %>
+    <% events.forEach(event => { %>
+        <div class="card text-center m-3">
+            <% if (typeof event.img !== 'undefined') { %>
+                <img class="card-img-top" src="<%= event.img %>" alt="Card image cap">
+            <% } %>
+            <div class="card-header">
+                <h5 class="card-title"><%= event.name %></h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Favorite Team - <%= event.team_selection %>
+                    <hr>
+                    <%= event.explanation %>   
+                </p>
+                <a href="/team-form-data?form_id=<%= event.id %>" class="btn btn-secondary">View</a>
+            </div>
+            <div class="card-footer text-muted">
+                <%= event.createdAt %>
+            </div>
+        </div>
+    <% }) %>
+<% } else { %>
+    <p>No forms available at the moment.</p>
+<% } %>

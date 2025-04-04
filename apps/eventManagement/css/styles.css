@@ -18,16 +18,17 @@ body {
         text-decoration: unset;
     }
     .navBar{
-        padding: 24px;
         z-index: 1;
         background-color: rgb(72, 72, 72);
         grid-area: menu;
-        ul, a{
+        li, a{
             list-style: none;
-            color: firebrick !important;
-            li{
-                margin-top: 1rem;
-            }
+            color: rgb(255, 255, 255) !important;
+            margin-top: 1rem;
+        }
+
+        .nav-link.active{
+            background-color: black;
         }
     }
     .page-title{
@@ -45,10 +46,12 @@ body {
         text-align: center;
         grid-area: footer;      
     }
+    .card {
+        color: black;
+    }
 }
 
 form {
-    margin: 5rem;
     .form-heading{
         font-size: x-large;
     }
@@ -61,9 +64,6 @@ form {
         text-decoration: solid;
         color: firebrick;
         padding-right: 1rem;
-    }
-    .form-input{
-
     }
     .form-footer{
         text-align: center;

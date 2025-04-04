@@ -4,42 +4,7 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="page-body">
-            <form action="/sample-form-submit" method="POST">
-                <div class="form-heading">
-                    What is your favorite Formula1 Team?
-                </div>
-                <div class="form-inputs">
-                    <label for="name" class="form-label">
-                        Name
-                    </label>
-                    <input name="name" class="form-input">
-                </div>
-                <div class="form-inputs">
-                    <label for="team_selection" class="form-label">
-                        Favorite Team
-                    </label>
-                    <select type="select" name="team_selection" class="form-select">
-                        <option value="red_bull">Red Bull</option>
-                        <option value="racing_bulls">Racing Bulls</option>
-                        <option value="mclaren">Mclaren</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="aston_martin">Aston Martin</option>
-                        <option value="haas">HAAS</option>
-                        <option value="alpine">Alpine</option>
-                        <option value="williams">Williams</option>
-                        <option value="sauber">Kick Sauber</option>
-                    </select>
-                </div>
-                <div class="form-inputs">
-                    <label for="explanation" class="form-label">
-                        Explanation
-                    </label>
-                    <textarea name="explanation" class="form-textArea"></textarea>
-                </div> 
-                <div class="form-footer">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
+            <%- include('./partials/f1Form.ejs') %>
         </div>
         <%- include('./partials/footer.ejs') %>
     </body>
