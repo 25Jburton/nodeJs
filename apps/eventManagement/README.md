@@ -13,3 +13,5 @@ Form Data schould include the following
 - Express-validator for form data
 - Express server
 - ejs as the templating engine for HTML server rendering
+- Basic partial views for layout consistency
+- SASS used for styling
